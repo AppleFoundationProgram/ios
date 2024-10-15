@@ -1,14 +1,14 @@
 //
-//  crumpdumpApp.swift
+//  SwiftUIView.swift
 //  crumpdump
 //
-//  Created by Jiwon Kim on 10/14/24.
+//  Created by foundation program on 10/15/24.
 //
-
 import SwiftUI
 
-struct ContentView: View {
-    @State private var showAlert = true  // 앱이 시작할 때 Sheet가 보이도록 기본값을 true로 설정
+struct SwiftUIView: View {
+    @State private var showAlert = true  // 앱이 시작될 때 Sheet가 보이도록 기본값을 true로 설정
+    @Environment(\.presentationMode) var presentationMode  // presentationMode를 추가해줍니다.
 
     var body: some View {
         NavigationView {
@@ -19,9 +19,7 @@ struct ContentView: View {
                     .frame(width: 300, height: 300)
                     .padding()
 
-                Button(action: {
-                    showAlert.toggle()
-                }) {
+                NavigationLink(destination: ThrowView()) {
                     Text("던지기")
                         .font(.system(size: 24))
                         .padding()
@@ -36,10 +34,42 @@ struct ContentView: View {
                 SafetySheetView()
             }
             .onAppear {
-                // 앱이 시작될 때 Sheet가 보이도록 설정
-                showAlert = true
+                showAlert = true // 앱이 시작될 때 Sheet가 보이도록 설정
+            }
+            .toolbar {  // 툴바에 네비게이션 뒤로가기 버튼 추가
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()  // 뒤로가기 버튼 액션
+                    }) {
+                        Image(systemName: "chevron.left")
+                    }
+                }
             }
         }
+    }
+}
+
+struct ThrowView: View {
+    var body: some View {
+        VStack {
+            Text("던지기 이후 화면")
+                .font(.largeTitle)
+                .padding()
+
+            Image("throw_action_image") // 던지는 동작을 나타내는 이미지를 추가하세요.
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 300, height: 300)
+                .padding()
+
+            Text("여기서 물체를 던지는 동작을 할 수 있습니다.")
+                .font(.body)
+                .padding()
+
+            Spacer()
+        }
+        .navigationTitle("던지기 액션")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -48,7 +78,7 @@ struct SafetySheetView: View {
 
     var body: some View {
         VStack {
-            Text("안전한 사용을 위한 주의 사항")
+            Text("안전한 사용을 위한 주의사항")
                 .font(.headline)
                 .padding()
 
@@ -78,8 +108,6 @@ struct SafetySheetView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SwiftUIView()
     }
 }
-
-

@@ -7,13 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11FB56782CBD6EFE006D5754 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB56772CBD6EFE006D5754 /* SwiftUIView.swift */; };
 		F1EECF222CBCE9850099A1E1 /* crumpdumpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */; };
-		F1EECF242CBCE9850099A1E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF232CBCE9850099A1E1 /* ContentView.swift */; };
 		F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EECF252CBCE9860099A1E1 /* Assets.xcassets */; };
-		F1EECF292CBCE9860099A1E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EECF282CBCE9860099A1E1 /* Preview Assets.xcassets */; };
-		F1EECF332CBCE9860099A1E1 /* crumpdumpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF322CBCE9860099A1E1 /* crumpdumpTests.swift */; };
-		F1EECF3D2CBCE9860099A1E1 /* crumpdumpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF3C2CBCE9860099A1E1 /* crumpdumpUITests.swift */; };
-		F1EECF3F2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF3E2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11FB56772CBD6EFE006D5754 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		F1EECF1E2CBCE9850099A1E1 /* crumpdump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crumpdump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpApp.swift; sourceTree = "<group>"; };
-		F1EECF232CBCE9850099A1E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F1EECF252CBCE9860099A1E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F1EECF282CBCE9860099A1E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1EECF2E2CBCE9860099A1E1 /* crumpdumpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crumpdumpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EECF322CBCE9860099A1E1 /* crumpdumpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpTests.swift; sourceTree = "<group>"; };
 		F1EECF382CBCE9860099A1E1 /* crumpdumpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crumpdumpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EECF3C2CBCE9860099A1E1 /* crumpdumpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpUITests.swift; sourceTree = "<group>"; };
-		F1EECF3E2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				F1EECF202CBCE9850099A1E1 /* crumpdump */,
-				F1EECF312CBCE9860099A1E1 /* crumpdumpTests */,
-				F1EECF3B2CBCE9860099A1E1 /* crumpdumpUITests */,
 				F1EECF1F2CBCE9850099A1E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,36 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */,
-				F1EECF232CBCE9850099A1E1 /* ContentView.swift */,
+				11FB56772CBD6EFE006D5754 /* SwiftUIView.swift */,
 				F1EECF252CBCE9860099A1E1 /* Assets.xcassets */,
-				F1EECF272CBCE9860099A1E1 /* Preview Content */,
 			);
 			path = crumpdump;
-			sourceTree = "<group>";
-		};
-		F1EECF272CBCE9860099A1E1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F1EECF282CBCE9860099A1E1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F1EECF312CBCE9860099A1E1 /* crumpdumpTests */ = {
-			isa = PBXGroup;
-			children = (
-				F1EECF322CBCE9860099A1E1 /* crumpdumpTests.swift */,
-			);
-			path = crumpdumpTests;
-			sourceTree = "<group>";
-		};
-		F1EECF3B2CBCE9860099A1E1 /* crumpdumpUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F1EECF3C2CBCE9860099A1E1 /* crumpdumpUITests.swift */,
-				F1EECF3E2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift */,
-			);
-			path = crumpdumpUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +195,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EECF292CBCE9860099A1E1 /* Preview Assets.xcassets in Resources */,
 				F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EECF242CBCE9850099A1E1 /* ContentView.swift in Sources */,
+				11FB56782CBD6EFE006D5754 /* SwiftUIView.swift in Sources */,
 				F1EECF222CBCE9850099A1E1 /* crumpdumpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EECF332CBCE9860099A1E1 /* crumpdumpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EECF3F2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift in Sources */,
-				F1EECF3D2CBCE9860099A1E1 /* crumpdumpUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +435,6 @@
 		F1EECF462CBCE9860099A1E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -495,7 +454,6 @@
 		F1EECF472CBCE9860099A1E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -515,7 +473,6 @@
 		F1EECF492CBCE9860099A1E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9UM7U5V24C;
@@ -533,7 +490,6 @@
 		F1EECF4A2CBCE9860099A1E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9UM7U5V24C;
