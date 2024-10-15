@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,11 @@
 		F1EECF3C2CBCE9860099A1E1 /* crumpdumpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpUITests.swift; sourceTree = "<group>"; };
 		F1EECF3E2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CD9133892CBE9F6300D24A07 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		CD91338A2CBE9F6800D24A07 /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F1EECF1B2CBCE9850099A1E1 /* Frameworks */ = {
@@ -94,6 +99,8 @@
 		F1EECF202CBCE9850099A1E1 /* crumpdump */ = {
 			isa = PBXGroup;
 			children = (
+				CD91338A2CBE9F6800D24A07 /* Components */,
+				CD9133892CBE9F6300D24A07 /* Views */,
 				F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */,
 				F1EECF232CBCE9850099A1E1 /* ContentView.swift */,
 				F1EECF252CBCE9860099A1E1 /* Assets.xcassets */,
@@ -141,6 +148,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CD9133892CBE9F6300D24A07 /* Views */,
+				CD91338A2CBE9F6800D24A07 /* Components */,
 			);
 			name = crumpdump;
 			productName = crumpdump;
