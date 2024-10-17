@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CrumpleView: View {
+struct CrumpleNewView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var navigateToThrow: Bool = false
     
@@ -46,7 +46,7 @@ struct CrumpleView: View {
 struct CrumpleView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CrumpleView()
+            CrumpleNewView()
         }
     }
 }

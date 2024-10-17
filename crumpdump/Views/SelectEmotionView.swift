@@ -202,7 +202,7 @@ struct SelectEmotionView: View {
                         }
                     }
                     
-                    NavigationLink(destination: CrumpleView()) {
+                    NavigationLink(destination: CrumpleNewView()) {
                         Text("다음")
                             .padding()
                             .foregroundColor(.white)
@@ -248,19 +248,19 @@ struct SelectEmotionView: View {
     
     private func toggleSelectableState(for emotion: Emotion) {
         if selectableEmotions.contains(emotion.id) {
-                selectableEmotions.remove(emotion.id)
-            } else if selectableEmotions.count < 3 {
-                selectableEmotions.insert(emotion.id)
-            } else {
-                showToast = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation {
-                        showToast = false
-                    }
+            selectableEmotions.remove(emotion.id)
+        } else if selectableEmotions.count < 3 {
+            selectableEmotions.insert(emotion.id)
+        } else {
+            showToast = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    showToast = false
                 }
-                return
             }
-            updateSelectedEmotionsText()
+            return
+        }
+        updateSelectedEmotionsText()
     }
 }
 
