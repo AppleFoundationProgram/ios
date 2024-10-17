@@ -1,9 +1,3 @@
-//
-//  MotionTestView.swift
-//  crumpdump
-//
-//  Created by taenee on 10/17/24.
-//
 import SwiftUI
 
 struct MotionTestView: View {
@@ -17,7 +11,6 @@ struct MotionTestView: View {
                 .font(.headline)
                 .padding()
 
-            // List to display live motion data
             List(motionManager.currentMotionData, id: \.timestamp) { data in
                 VStack(alignment: .leading) {
                     Text("Timestamp: \(data.timestamp)")
@@ -51,7 +44,6 @@ struct MotionTestView: View {
     }
 }
 
-// Preview for SwiftUI
 struct MotionTestView_Previews: PreviewProvider {
     static var previews: some View {
         MotionTestView()

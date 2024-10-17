@@ -1,10 +1,3 @@
-//
-//  SelectEmotionView.swift
-//  crumpdump
-//
-//  Created by taenee on 10/14/24.
-//
-
 import SwiftUI
 
 struct SelectEmotionView: View {
@@ -25,7 +18,7 @@ struct SelectEmotionView: View {
             Emotion(id: 7, name: "화가 난"),
             Emotion(id: 8, name: "폭발 직전인"),
             Emotion(id: 9, name: "속상한"),
-            Emotion(id: 10, name: "분함을 느끼는"), // 수정됨
+            Emotion(id: 10, name: "분함을 느끼는"),
             Emotion(id: 11, name: "억울한"),
             Emotion(id: 12, name: "짜증나는"),
             Emotion(id: 13, name: "흥분한"),
@@ -124,7 +117,7 @@ struct SelectEmotionView: View {
         
         Emotion(id: 95, name: "열등감과 질투", children: [
             Emotion(id: 96, name: "열등감을 느끼는"),
-            Emotion(id: 97, name: "질투심이 드는"), // 수정됨
+            Emotion(id: 97, name: "질투심이 드는"),
             Emotion(id: 98, name: "시기하는"),
             Emotion(id: 99, name: "남들과 비교하는"),
             Emotion(id: 100, name: "자신이 부족하다고 느끼는"),
@@ -136,14 +129,14 @@ struct SelectEmotionView: View {
         ])
     ]
     
-    @State private var selectableEmotions : Set<Int> = [ ]
-    //    @State private var emotionString = ""
-    @State private var emotionList:[String] = []
+    @State private var selectableEmotions: Set<Int> = []
+    @State private var emotionList: [String] = []
     @State private var showToast = false
     @State private var ableNext = false
+    @State private var navigateToCrumpleView = false
     
     var body: some View {
-        NavigationView{
+        NavigationStack {
             ZStack {
                 VStack {
                     Text("버리고 싶은 감정 찾기")
@@ -201,16 +194,27 @@ struct SelectEmotionView: View {
                             }
                         }
                     }
-                    
-                    NavigationLink(destination: CrumpleNewView()) {
-                        Text("다음")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(ableNext ? Color.blue :  Color.gray)
-                            .cornerRadius(10)
-                    }.disabled(!ableNext)
+                    CustomButton(title: "다음", backgroundColor: ableNext ? Color.blue : Color.gray.opacity(0.3)) {
+                            navigateToCrumpleView = true
+                        }
+                        .disabled(!ableNext)
                 }
-                
+                .padding()
+                .navigationTitle("감정 선택")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            navigateToCrumpleView = false
+                        }) {
+                            Image(systemName: "chevron.left")
+                        }
+                    }
+                }
+                .navigationDestination(isPresented: $navigateToCrumpleView) {
+                    CrumpleView()
+                }
                 if showToast {
                     VStack {
                         Spacer()
@@ -239,32 +243,32 @@ struct SelectEmotionView: View {
             .filter { selectableEmotions.contains($0.id) }
             .map { $0.name }
         
-        //        emotionString = selectedEmotionsList.isEmpty
-        //        ? "": selectedEmotionsList.joined(separator: ", ")
-        
         ableNext = selectedEmotionsList.count > 0
         emotionList = selectedEmotionsList
     }
     
     private func toggleSelectableState(for emotion: Emotion) {
         if selectableEmotions.contains(emotion.id) {
-            selectableEmotions.remove(emotion.id)
-        } else if selectableEmotions.count < 3 {
-            selectableEmotions.insert(emotion.id)
-        } else {
-            showToast = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation {
-                    showToast = false
+                selectableEmotions.remove(emotion.id)
+            } else if selectableEmotions.count < 3 {
+                selectableEmotions.insert(emotion.id)
+            } else {
+                showToast = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation {
+                        showToast = false
+                    }
                 }
+                return
             }
-            return
-        }
-        updateSelectedEmotionsText()
+            updateSelectedEmotionsText()
     }
 }
 
-#Preview {
-    SelectEmotionView()
+struct SelectEmotionView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            SelectEmotionView()
+        }
+    }
 }
-

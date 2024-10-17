@@ -1,10 +1,3 @@
-//
-//  KeywordCapsule.swift
-//  crumpdump
-//
-//  Created by taenee on 10/14/24.
-//
-
 import SwiftUI
 
 struct KeywordCapsule: View {
