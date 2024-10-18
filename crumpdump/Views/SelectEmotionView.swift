@@ -213,7 +213,7 @@ struct SelectEmotionView: View {
                     }
                 }
                 .navigationDestination(isPresented: $navigateToCrumpleView) {
-                    CrumpleView()
+                    CrumpleView(bindEmotionList: $emotionList)
                 }
                 if showToast {
                     VStack {
@@ -267,7 +267,7 @@ struct SelectEmotionView: View {
 
 struct SelectEmotionView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             SelectEmotionView()
         }
     }
