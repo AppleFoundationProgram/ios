@@ -17,7 +17,7 @@ struct MotionTestView: View {
     @StateObject private var motionManager = MotionManager()
     @State private var isRecording = false
     @State private var statusMessage = "Press 'Start' to begin recording"
-    @State private var currentLabel = "Not Throw"
+    @State private var currentLabel = "Still"
     
     var body: some View {
         VStack(spacing: 20) {
@@ -26,8 +26,9 @@ struct MotionTestView: View {
                 .padding()
 
             Picker("Select Label", selection: $currentLabel) {
-                Text("Not Throw").tag("Not Throw")
+                Text("Still").tag("Still")
                 Text("Throw").tag("Throw")
+                Text("Not Throw").tag("Not Throw")
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding()
