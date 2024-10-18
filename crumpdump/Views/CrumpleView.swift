@@ -30,9 +30,15 @@ struct CrumpleView: View {
                 Image("\(currentImage)")
                     .resizable()
                     .scaledToFill()
-                    .onLongPressGesture(minimumDuration: 0.01, pressing: { pressing in
+                    .onLongPressGesture(minimumDuration: 0.1, pressing: { pressing in
                         if pressing {
-                            startCrumple(crumpleDone: crumpleDone)
+
+                            if self.totalTouchTime >= self.period {
+                                crumpleDone = true
+                                stopCrumple()
+                            }else{
+                                startCrumple(crumpleDone: crumpleDone)
+                            }
                         } else {
                             if crumpleDone {
                                 explainMessage = "종이를 모두 구겼습니다!!"
@@ -108,7 +114,7 @@ struct CrumpleView: View {
         totalTouchTime = 0
         touchTimer?.invalidate()
 
-        touchTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+        touchTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
             if let startTime = self.startTime {
                 let currentTime = Date()
                 self.totalTouchTime = currentTime.timeIntervalSince(startTime)
