@@ -22,7 +22,7 @@ struct ThrowView: View {
     @Environment(\.presentationMode) var presentationMode
     let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
 
-    let throwingModel: ThrowAndNotThrow
+    let throwingModel: throw4
 
     @State private var accelXData = [Double](repeating: 0, count: 100)
     @State private var accelYData = [Double](repeating: 0, count: 100)
@@ -35,7 +35,7 @@ struct ThrowView: View {
     init() {
         do {
             let config = MLModelConfiguration()
-            throwingModel = try ThrowAndNotThrow(configuration: config)
+            throwingModel = try throw4(configuration: config)
         } catch {
             fatalError("ThrowAndNotThrow 모델 초기화 실패: \(error.localizedDescription)")
         }
@@ -71,12 +71,14 @@ struct ThrowView: View {
                 SafetySheetView()
             }
             .onAppear {
+                print("ThrowView appeared")
                 showAlert = true
                 resetThrowState()
                 stopMotionUpdates()
                 startMotionUpdates()
             }
             .onDisappear {
+                print("ThrowView disappeared")
                 stopMotionUpdates()
             }
             .toolbar {
@@ -98,6 +100,7 @@ struct ThrowView: View {
     }
 
     func resetThrowState() {
+        print("Resetting throw state")
         throwAnimationStarted = false
         noteXOffset = 0
         noteYOffset = 0
@@ -107,9 +110,13 @@ struct ThrowView: View {
 
     func startMotionUpdates() {
         if motionManager.isDeviceMotionAvailable {
+            print("Starting motion updates")
             motionManager.deviceMotionUpdateInterval = 1.0 / 60.0
             motionManager.startDeviceMotionUpdates(to: .main) { motionData, error in
-                guard let data = motionData else { return }
+                guard let data = motionData else {
+                    print("Motion data is nil: \(error?.localizedDescription ?? "Unknown error")")
+                    return
+                }
 
                 let accel = data.userAcceleration
                 let rotation = data.rotationRate
@@ -122,9 +129,11 @@ struct ThrowView: View {
                     self.gyroYData[self.dataCounter] = rotation.y
                     self.gyroZData[self.dataCounter] = rotation.z
                     self.dataCounter += 1
+                    print("Data counter: \(self.dataCounter)")
                 }
 
                 if self.dataCounter == 100 {
+                    print("Collected 100 data points, making prediction")
                     let accelXArray = try? MLMultiArray(self.accelXData)
                     let accelYArray = try? MLMultiArray(self.accelYData)
                     let accelZArray = try? MLMultiArray(self.accelZData)
@@ -134,7 +143,7 @@ struct ThrowView: View {
 
                     let stateIn = try? MLMultiArray(shape: [400], dataType: .double)
 
-                    let modelInput = ThrowAndNotThrowInput(
+                    let modelInput = throw4Input(
                         Acceleration_X: accelXArray!,
                         Acceleration_Y: accelYArray!,
                         Acceleration_Z: accelZArray!,
@@ -145,18 +154,24 @@ struct ThrowView: View {
                     )
 
                     if let prediction = try? throwingModel.prediction(input: modelInput) {
+                        print("Prediction result: \(prediction.label)")
                         if prediction.label == "Throw" {
                             throwNote()
                         }
+                    } else {
+                        print("Failed to make a prediction")
                     }
 
                     self.dataCounter = 0
                 }
             }
+        } else {
+            print("Device motion not available")
         }
     }
 
     func throwNote() {
+        print("Throwing note")
         throwAnimationStarted = true
         feedbackGenerator.impactOccurred()
 
@@ -168,12 +183,14 @@ struct ThrowView: View {
         stopMotionUpdates()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            print("Throw animation completed")
             appState.isThrowCompleted = true
         }
     }
 
     func stopMotionUpdates() {
         if motionManager.isDeviceMotionActive {
+            print("Stopping motion updates")
             motionManager.stopDeviceMotionUpdates()
         }
     }

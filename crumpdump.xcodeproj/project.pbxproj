@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CDB034D32CC2203300E54CFD /* crumping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDB034D22CC2203300E54CFD /* crumping.mp3 */; };
-		F10682942CC295C800F740DC /* ThrowAndNotThrow.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F10682932CC295C800F740DC /* ThrowAndNotThrow.mlmodel */; };
+		F10682A22CC2B4D200F740DC /* throw4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F10682A12CC2B4D200F740DC /* throw4.mlmodel */; };
 		F1EECF222CBCE9850099A1E1 /* crumpdumpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */; };
 		F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EECF252CBCE9860099A1E1 /* Assets.xcassets */; };
 		F1EECF292CBCE9860099A1E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EECF282CBCE9860099A1E1 /* Preview Assets.xcassets */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		CDB034D22CC2203300E54CFD /* crumping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crumping.mp3; sourceTree = "<group>"; };
-		F10682932CC295C800F740DC /* ThrowAndNotThrow.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ThrowAndNotThrow.mlmodel; sourceTree = "<group>"; };
+		F10682A12CC2B4D200F740DC /* throw4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = throw4.mlmodel; sourceTree = "<group>"; };
 		F1EECF1E2CBCE9850099A1E1 /* crumpdump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crumpdump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpApp.swift; sourceTree = "<group>"; };
 		F1EECF252CBCE9860099A1E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,9 +105,9 @@
 				CD91338A2CBE9F6800D24A07 /* Components */,
 				CD9133892CBE9F6300D24A07 /* Views */,
 				F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */,
+				F10682A12CC2B4D200F740DC /* throw4.mlmodel */,
 				F1EECF252CBCE9860099A1E1 /* Assets.xcassets */,
 				F1EECF272CBCE9860099A1E1 /* Preview Content */,
-				F10682932CC295C800F740DC /* ThrowAndNotThrow.mlmodel */,
 			);
 			path = crumpdump;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F10682942CC295C800F740DC /* ThrowAndNotThrow.mlmodel in Sources */,
+				F10682A22CC2B4D200F740DC /* throw4.mlmodel in Sources */,
 				F1EECF222CBCE9850099A1E1 /* crumpdumpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
