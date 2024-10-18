@@ -2,6 +2,7 @@ import SwiftUI
 import AVFoundation
 
 struct CrumpleView: View {
+    @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
     @Binding var bindEmotionList: [String]
     @State private var navigateToThrow: Bool = false

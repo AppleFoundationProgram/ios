@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var appState: AppState
     @State private var navigateToWrite: Bool = false
     
     var body: some View {

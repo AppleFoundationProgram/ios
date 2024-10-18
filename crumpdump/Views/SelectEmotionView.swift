@@ -2,6 +2,8 @@ import SwiftUI
 
 struct SelectEmotionView: View {
     
+    @EnvironmentObject var appState: AppState
+    
     struct Emotion: Identifiable {
         let id: Int
         let name: String
