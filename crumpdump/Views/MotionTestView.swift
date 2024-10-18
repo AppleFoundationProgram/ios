@@ -49,7 +49,7 @@ struct MotionTestView: View {
                     motionManager.saveCSVToDocuments(csvString: csvString, fileName: "MotionData")
                     statusMessage = "Recording stopped. Data saved as CSV."
                 } else {
-                    motionManager.startRecordingMotionData(label: currentLabel) 
+                    motionManager.startRecordingMotionData(label: currentLabel)
                     statusMessage = "Recording motion data with label: \(currentLabel)"
                 }
                 isRecording.toggle()
