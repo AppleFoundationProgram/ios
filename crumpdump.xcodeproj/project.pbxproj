@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD9133A22CBFB7F800D24A07 /* crumping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD9133A12CBFB7F800D24A07 /* crumping.mp3 */; };
 		CD9133A42CBFFC3C00D24A07 /* crumppaper.mov in Resources */ = {isa = PBXBuildFile; fileRef = CD9133A32CBFFC3C00D24A07 /* crumppaper.mov */; };
+		CDB034D32CC2203300E54CFD /* crumping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDB034D22CC2203300E54CFD /* crumping.mp3 */; };
 		F1EECF222CBCE9850099A1E1 /* crumpdumpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */; };
 		F1EECF242CBCE9850099A1E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF232CBCE9850099A1E1 /* ContentView.swift */; };
 		F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EECF252CBCE9860099A1E1 /* Assets.xcassets */; };
@@ -36,8 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD9133A12CBFB7F800D24A07 /* crumping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crumping.mp3; sourceTree = "<group>"; };
 		CD9133A32CBFFC3C00D24A07 /* crumppaper.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crumppaper.mov; sourceTree = "<group>"; };
+		CDB034D22CC2203300E54CFD /* crumping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crumping.mp3; sourceTree = "<group>"; };
 		F1EECF1E2CBCE9850099A1E1 /* crumpdump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crumpdump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpApp.swift; sourceTree = "<group>"; };
 		F1EECF232CBCE9850099A1E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		F1EECF202CBCE9850099A1E1 /* crumpdump */ = {
 			isa = PBXGroup;
 			children = (
+				CDB034D22CC2203300E54CFD /* crumping.mp3 */,
 				CD9133A32CBFFC3C00D24A07 /* crumppaper.mov */,
-				CD9133A12CBFB7F800D24A07 /* crumping.mp3 */,
 				CD91338A2CBE9F6800D24A07 /* Components */,
 				CD9133892CBE9F6300D24A07 /* Views */,
 				F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */,
@@ -251,7 +251,7 @@
 				F1EECF292CBCE9860099A1E1 /* Preview Assets.xcassets in Resources */,
 				CD9133A42CBFFC3C00D24A07 /* crumppaper.mov in Resources */,
 				F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */,
-				CD9133A22CBFB7F800D24A07 /* crumping.mp3 in Resources */,
+				CDB034D32CC2203300E54CFD /* crumping.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

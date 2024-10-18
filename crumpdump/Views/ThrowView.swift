@@ -48,7 +48,7 @@ struct ThrowView: View {
 
 struct ThrowView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             ThrowView()
         }
     }
