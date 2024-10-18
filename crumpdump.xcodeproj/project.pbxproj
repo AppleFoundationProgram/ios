@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD9133A42CBFFC3C00D24A07 /* crumppaper.mov in Resources */ = {isa = PBXBuildFile; fileRef = CD9133A32CBFFC3C00D24A07 /* crumppaper.mov */; };
+		CDB034D32CC2203300E54CFD /* crumping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDB034D22CC2203300E54CFD /* crumping.mp3 */; };
 		F1EECF222CBCE9850099A1E1 /* crumpdumpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */; };
 		F1EECF242CBCE9850099A1E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF232CBCE9850099A1E1 /* ContentView.swift */; };
 		F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EECF252CBCE9860099A1E1 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD9133A32CBFFC3C00D24A07 /* crumppaper.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crumppaper.mov; sourceTree = "<group>"; };
+		CDB034D22CC2203300E54CFD /* crumping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crumping.mp3; sourceTree = "<group>"; };
 		F1EECF1E2CBCE9850099A1E1 /* crumpdump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crumpdump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpApp.swift; sourceTree = "<group>"; };
 		F1EECF232CBCE9850099A1E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +49,11 @@
 		F1EECF3C2CBCE9860099A1E1 /* crumpdumpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpUITests.swift; sourceTree = "<group>"; };
 		F1EECF3E2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CD9133892CBE9F6300D24A07 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		CD91338A2CBE9F6800D24A07 /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F1EECF1B2CBCE9850099A1E1 /* Frameworks */ = {
@@ -94,6 +103,10 @@
 		F1EECF202CBCE9850099A1E1 /* crumpdump */ = {
 			isa = PBXGroup;
 			children = (
+				CDB034D22CC2203300E54CFD /* crumping.mp3 */,
+				CD9133A32CBFFC3C00D24A07 /* crumppaper.mov */,
+				CD91338A2CBE9F6800D24A07 /* Components */,
+				CD9133892CBE9F6300D24A07 /* Views */,
 				F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */,
 				F1EECF232CBCE9850099A1E1 /* ContentView.swift */,
 				F1EECF252CBCE9860099A1E1 /* Assets.xcassets */,
@@ -141,6 +154,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CD9133892CBE9F6300D24A07 /* Views */,
+				CD91338A2CBE9F6800D24A07 /* Components */,
 			);
 			name = crumpdump;
 			productName = crumpdump;
@@ -191,7 +208,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					F1EECF1D2CBCE9850099A1E1 = {
 						CreatedOnToolsVersion = 15.4;
@@ -232,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EECF292CBCE9860099A1E1 /* Preview Assets.xcassets in Resources */,
+				CD9133A42CBFFC3C00D24A07 /* crumppaper.mov in Resources */,
 				F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */,
+				CDB034D32CC2203300E54CFD /* crumping.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +494,6 @@
 		F1EECF462CBCE9860099A1E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -495,7 +513,6 @@
 		F1EECF472CBCE9860099A1E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -515,7 +532,6 @@
 		F1EECF492CBCE9860099A1E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9UM7U5V24C;
@@ -533,7 +549,6 @@
 		F1EECF4A2CBCE9860099A1E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9UM7U5V24C;
