@@ -12,7 +12,6 @@ struct CrumpleView: View {
     @State private var touchTimer: Timer? = nil
     @State private var imageTimer: Timer? = nil
     
-    // setting
     private let period: TimeInterval = 2
     private let imageCount = 95
     
@@ -168,7 +167,7 @@ struct CrumpleView: View {
 
     private func playAudio() {
         if audioPlayer?.isPlaying == true {
-            return // 이미 재생 중인 경우, 함수를 종료합니다.
+            return
         }
 
         if let soundURL = Bundle.main.url(forResource: "crumping", withExtension: "mp3") {

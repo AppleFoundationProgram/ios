@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SafetySheetView: View {
+    @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {

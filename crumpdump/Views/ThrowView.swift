@@ -16,13 +16,12 @@ struct ThrowView: View {
     @State private var navigateToHome = false
     @State private var motionManager = CMMotionManager()
     @State private var throwAnimationStarted = false
-    @State private var notePosition = CGSize(width: UIScreen.main.bounds.width - 100, height: UIScreen.main.bounds.height - 100)
     @State private var noteXOffset: CGFloat = 0
     @State private var noteYOffset: CGFloat = 0
     @State private var dollPosition = CGSize(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height / 2 - 150)
     @Environment(\.presentationMode) var presentationMode
     let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
-    
+
     let throwingModel: ThrowAndNotThrow
 
     @State private var accelXData = [Double](repeating: 0, count: 100)
@@ -32,7 +31,7 @@ struct ThrowView: View {
     @State private var gyroYData = [Double](repeating: 0, count: 100)
     @State private var gyroZData = [Double](repeating: 0, count: 100)
     @State private var dataCounter = 0
-    
+
     init() {
         do {
             let config = MLModelConfiguration()
@@ -74,7 +73,11 @@ struct ThrowView: View {
             .onAppear {
                 showAlert = true
                 resetThrowState()
+                stopMotionUpdates()
                 startMotionUpdates()
+            }
+            .onDisappear {
+                stopMotionUpdates()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -99,6 +102,7 @@ struct ThrowView: View {
         noteXOffset = 0
         noteYOffset = 0
         dataCounter = 0
+        appState.isThrowCompleted = false
     }
 
     func startMotionUpdates() {
@@ -162,8 +166,7 @@ struct ThrowView: View {
         }
 
         stopMotionUpdates()
-        
-        // Enable the button after throw is completed
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             appState.isThrowCompleted = true
         }
