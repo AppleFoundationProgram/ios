@@ -3,13 +3,14 @@ import UIKit
 
 class MotionManager: ObservableObject {
     private let motionManager = CMMotionManager()
-    private var motionData = [(timestamp: TimeInterval, accelX: Double, accelY: Double, accelZ: Double, gyroX: Double, gyroY: Double, gyroZ: Double)]()
+    private var motionData = [MotionData]()
+    private var timer: Timer?
     
-    @Published var currentMotionData: [(timestamp: TimeInterval, accelX: Double, accelY: Double, accelZ: Double, gyroX: Double, gyroY: Double, gyroZ: Double)] = []
+    @Published var currentMotionData: [MotionData] = []
     
-    func startRecordingMotionData() {
+    func startRecordingMotionData(label: String) {
         guard motionManager.isAccelerometerAvailable, motionManager.isGyroAvailable else {
-            print("Accelerometer or Gyroscope is not available.")
+            print("Accelerometer 또는 Gyroscope가 사용 불가능합니다.")
             return
         }
         
@@ -19,20 +20,24 @@ class MotionManager: ObservableObject {
         motionManager.startAccelerometerUpdates()
         motionManager.startGyroUpdates()
 
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            
             if let accelData = self.motionManager.accelerometerData, let gyroData = self.motionManager.gyroData {
                 let timestamp = Date().timeIntervalSince1970
-                let accelX = accelData.acceleration.x
-                let accelY = accelData.acceleration.y
-                let accelZ = accelData.acceleration.z
-                let gyroX = gyroData.rotationRate.x
-                let gyroY = gyroData.rotationRate.y
-                let gyroZ = gyroData.rotationRate.z
+                let newData = MotionData(
+                    timestamp: timestamp,
+                    accelX: accelData.acceleration.x,
+                    accelY: accelData.acceleration.y,
+                    accelZ: accelData.acceleration.z,
+                    gyroX: gyroData.rotationRate.x,
+                    gyroY: gyroData.rotationRate.y,
+                    gyroZ: gyroData.rotationRate.z,
+                    label: label
+                )
                 
-                let newData = (timestamp, accelX, accelY, accelZ, gyroX, gyroY, gyroZ)
                 self.motionData.append(newData)
                 
-                // Update published data for live UI update
                 DispatchQueue.main.async {
                     self.currentMotionData.append(newData)
                 }
@@ -43,13 +48,14 @@ class MotionManager: ObservableObject {
     func stopRecordingMotionData() {
         motionManager.stopAccelerometerUpdates()
         motionManager.stopGyroUpdates()
+        timer?.invalidate()
     }
     
     func exportMotionDataToCSV() -> String {
-        var csvString = "timestamp,accelX,accelY,accelZ,gyroX,gyroY,gyroZ\n"
+        var csvString = "id,timestamp,accelX,accelY,accelZ,gyroX,gyroY,gyroZ,label\n"
         
         for data in motionData {
-            csvString.append("\(data.timestamp),\(data.accelX),\(data.accelY),\(data.accelZ),\(data.gyroX),\(data.gyroY),\(data.gyroZ)\n")
+            csvString.append("\(data.id.uuidString),\(data.timestamp),\(data.accelX),\(data.accelY),\(data.accelZ),\(data.gyroX),\(data.gyroY),\(data.gyroZ),\(data.label)\n")
         }
         
         return csvString
@@ -59,7 +65,7 @@ class MotionManager: ObservableObject {
         let fileManager = FileManager.default
         let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         guard let documentDirectory = urls.first else {
-            print("Unable to access document directory.")
+            print("문서 디렉토리를 찾을 수 없습니다.")
             return
         }
         
@@ -67,9 +73,9 @@ class MotionManager: ObservableObject {
         
         do {
             try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
-            print("CSV file saved successfully to: \(fileURL)")
+            print("CSV 파일이 저장되었습니다: \(fileURL)")
         } catch {
-            print("Error writing CSV file: \(error.localizedDescription)")
+            print("CSV 파일 저장 중 오류 발생: \(error.localizedDescription)")
         }
     }
 }
