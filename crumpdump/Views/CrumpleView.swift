@@ -32,7 +32,6 @@ struct CrumpleView: View {
                     .scaledToFill()
                     .onLongPressGesture(minimumDuration: 0.1, pressing: { pressing in
                         if pressing {
-
                             if self.totalTouchTime >= self.period {
                                 crumpleDone = true
                                 stopCrumple()
@@ -45,20 +44,19 @@ struct CrumpleView: View {
                             }
                             stopCrumple()
                         }
-                    }) {
-                    }
+                    }) {}
                 
                 VStack {
                     Text(explainMessage)
                         .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .padding()
+                        .foregroundColor(currentImage > 31 ? Color.white : Color.black)
                     Spacer()
                 }
                 
                 VStack {
                     Spacer()
                     TypingText(fullText: bindEmotionList, isHidden: currentImage > 31)
+                        .foregroundColor(Color.black)
                     Spacer()
                     
                     if crumpleDone {
@@ -134,7 +132,6 @@ struct CrumpleView: View {
             }
         }
     }
-
 
     private func startImageTimer() {
         let imageChangeInterval = period / Double(imageCount - 1)
