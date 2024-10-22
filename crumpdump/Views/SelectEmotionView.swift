@@ -2,6 +2,8 @@ import SwiftUI
 
 struct SelectEmotionView: View {
     
+    @EnvironmentObject var appState: AppState
+    
     struct Emotion: Identifiable {
         let id: Int
         let name: String
@@ -176,12 +178,13 @@ struct SelectEmotionView: View {
                     List {
                         OutlineGroup(emotions, children: \.children) {
                             item in HStack {
-                                Text(item.name)
-                                Spacer()
+                                Text("\(item.name)")
                                 if canSelectEmotion(item), selectableEmotions.contains(item.id) {
+                                    Spacer()
                                     Image(systemName: "checkmark.circle.fill")
                                         .foregroundColor(.blue)
                                 } else if canSelectEmotion(item) {
+                                    Spacer()
                                     Image(systemName: "circle")
                                         .foregroundColor(.gray)
                                 }

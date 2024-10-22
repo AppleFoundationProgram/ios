@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct WriteView: View {
+    @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
     @State private var navigateToEmotionView: Bool = false
     @State private var textInput: String = ""

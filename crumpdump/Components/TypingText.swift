@@ -7,6 +7,7 @@ struct TypingText: View {
     let fullText: [String]
     private let typingSpeed = 0.2
     var isHidden: Bool
+    var onTypingComplete: (() -> Void)? // callback
 
     var isTypingComplete: Bool {
         currentLineIndex >= fullText.count
@@ -41,7 +42,12 @@ struct TypingText: View {
             } else {
                 timer.invalidate()
                 currentLineIndex += 1
-                startTyping()
+                
+                if currentLineIndex >= fullText.count {
+                    onTypingComplete?()
+                } else {
+                    startTyping()
+                }
             }
         }
     }
@@ -58,4 +64,3 @@ struct TypingText_Previews: PreviewProvider {
         TypingText(fullText: ["우울한", "짜증이 나는", "스트레스 받는"], isHidden: false)
     }
 }
-

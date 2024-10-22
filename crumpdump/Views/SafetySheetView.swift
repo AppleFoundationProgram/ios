@@ -1,28 +1,40 @@
 import SwiftUI
 
 struct SafetySheetView: View {
+    @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
-            Text("안전한 사용을 위한 주의사항")
-                .font(.headline)
-                .padding()
-
-            Text("""
-            1. 실제 핸드폰을 던지지 마세요. 이 앱은 쪽지를 던지는 느낌을 주기 위한 모션을 제공합니다. 그러나 핸드폰을 실제로 던지지 않도록 주의하세요.
-
-            2. 충분한 공간을 확보하세요. 핸드폰을 흔드는 동작을 할 때 주변 물건과의 충돌을 방지하기 위해 넉넉한 공간에서 사용해 주세요.
-            """)
-                .font(.body)
-                .padding()
-
+            
             Spacer()
+            
+            Image("throw")
+                .resizable()
+                .frame(width: 80, height: 80)
+                .padding()
+            Text("Physical Discharge Techniques는 신체의 긴장과 스트레스를 해소하기 위해 신체 활동을 활용하는 방법입니다.\n이 기법은 신체적 에너지를 안전하게 분출함으로써 감정적, 정신적 부담을 줄이는 데 도움을 줄 수 있습니다.")
+                .padding()
+            
+            Image("warning")
+                .resizable()
+                .frame(width: 80, height: 80)
+                .padding()
+            
+            Text("1. 모션 시 핸드폰을 던지지 않도록 주의해주세요.\n2. 다른 사람이나 물건에 부딪히지 않도록 주의해주세요.").padding()
 
             CustomButton(title: "닫기", backgroundColor: .blue) {
                 presentationMode.wrappedValue.dismiss()
             }
         }
         .padding()
+    }
+}
+
+struct SafetySheetView_View: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            SafetySheetView()
+        }
     }
 }
