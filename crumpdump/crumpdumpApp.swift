@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct crumpdumpApp: App {
+    @StateObject private var appState = AppState()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(appState)
         }
     }
 }
+
