@@ -21,8 +21,8 @@ struct ThrowNewView: View {
     
     @State private var currentImageName: String = "open_mouth"
     
-    @State private var throwInfoText: String = "강구리에게 당신의 부정적인 감정을 던져주세요!"
-    @State private var statusEmotionalText: String = "당신의 마음 속에 있는 부정적인 감정들을 비워내고 덜어내보는 것이 필요합니다."
+    @State private var throwInfoText: String = "감구리에게 당신의 부정적인 감정을 던져주세요!"
+    @State private var statusEmotionalText: String = "마음 속에 있는 부정적인 감정들을\n비워내보면 어떨까요?"
     
     var body: some View {
         NavigationStack {
@@ -34,7 +34,6 @@ struct ThrowNewView: View {
                             Image(currentImageName)
                         }
                         
-                        // ThrowScene이 이미지 위에 표시됨
                         if throwSceneVisible {
                             ThrowSceneView(scene: throwScene)
                         }
@@ -47,12 +46,13 @@ struct ThrowNewView: View {
                             
                             Text(statusEmotionalText)
                                 .font(.title3)
+                                .multilineTextAlignment(.center)
                                 .foregroundColor(Color.black)
                                 .padding()
                             
                             Spacer()
                             
-                            GifImage("frog") // 숨긴 상태
+                            GifImage("frog")
                                 .opacity(throwSceneVisible ? 0 : 1)
                         }
                     }
@@ -81,7 +81,7 @@ struct ThrowNewView: View {
                 motionCatcher.stopMotionUpdates()
             }
             .onChange(of: motionCatcher.isThrowDetected) { before, after in
-                if after && !before { // 상태 변경 감지
+                if after && !before {
                     throwSceneVisible = true
                     motionCatcher.stopMotionUpdates()
                     throwNote(direction: motionCatcher.throwDirection)
@@ -120,11 +120,10 @@ struct ThrowNewView: View {
             throwScene.animateCircle(from: direction) {
                 currentImageName = "close_mouth"
                 SoundManager.shared.playSound(soundName: "chomp.mp3", onCompletion: {
-                    // 상태 변경 및 설명창 변경
                     appState.isThrowCompleted = true
                     
-                    throwInfoText = "강구리가 나쁜 감정을 먹어버렸어요!"
-                    statusEmotionalText = "비워진 마음에 새로운 감정이나 좋은 감정을 채우시길 바랍니다!"
+                    throwInfoText = "감구리 나쁜 감정을 먹어버렸어요!"
+                    statusEmotionalText = "비워진 마음에 새로운 감정이나 좋은 감정을 채우시길 바래요!"
                 })
             }
         }

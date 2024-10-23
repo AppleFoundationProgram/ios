@@ -38,7 +38,7 @@ class MotionManager: ObservableObject {
                 
                 self.motionData.append(newData)
                 
-                DispatchQueue.main.async {
+                DispatchQueue.global().async {
                     self.currentMotionData.append(newData)
                 }
             }
