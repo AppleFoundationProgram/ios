@@ -2,6 +2,7 @@ import SwiftUI
 import CoreMotion
 
 // throwView 때문에 제거
+// 근데 AppState 를 써야하는 이유가 있었는지 궁금합니다
 //class AppState: ObservableObject {
 //    @Published var isThrowCompleted = false
 //    
