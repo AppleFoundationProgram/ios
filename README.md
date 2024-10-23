@@ -29,12 +29,9 @@ CrumpDump는 감정을 기록하고 해소하는 데 도움을 주는 iOS 앱입
 ## 설치 및 실행 방법
 1. 이 저장소를 클론합니다.
    ```bash
-   git clone https://github.com/username/crumpdump.git
+   git clone https://github.com/applefoundationprogram/ios.git
    ```
 2. 프로젝트 폴더로 이동합니다.
-   ```bash
-   cd crumpdump
-   ```
 3. Xcode에서 `crumpdump.xcodeproj` 파일을 엽니다.
 4. iOS 시뮬레이터 또는 물리적 장치에서 실행합니다.
 
@@ -45,7 +42,7 @@ CrumpDump는 감정을 기록하고 해소하는 데 도움을 주는 iOS 앱입
 - 이 프로젝트는 **Apple Developer Academy @POSTECH**의 **Foundation Program 4기**에서 진행한 결과물입니다.
 
 ## 앱 스토어 링크
-- CrumpDump는 [앱 스토어](https://apps.apple.com/app/id1234567890)에서 다운로드할 수 있습니다.
+- CrumpDump는 [앱 스토어]('링크 추가 예정')에서 다운로드할 수 있습니다.
 
 ## 라이선스
 - 이 프로젝트는 MIT 라이선스에 따라 배포됩니다. 자세한 사항은 `LICENSE` 파일을 참조해주세요.
