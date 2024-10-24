@@ -6,7 +6,6 @@ struct SafetySheetView: View {
     
     var body: some View {
         VStack {
-            
             Spacer()
             
             Image("throw")
@@ -20,13 +19,12 @@ struct SafetySheetView: View {
                 .resizable()
                 .frame(width: 80, height: 80)
                 .padding()
-            
             Text("1. 모션 시 핸드폰을 던지지 않도록 주의해주세요.\n2. 다른 사람이나 물건에 부딪히지 않도록 주의해주세요.").padding()
-
             CustomButton(title: "닫기", backgroundColor: .blue) {
                 presentationMode.wrappedValue.dismiss()
             }
         }
+        .background(Color.white)
         .padding()
     }
 }
