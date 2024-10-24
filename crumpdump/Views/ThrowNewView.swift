@@ -3,7 +3,6 @@ import CoreMotion
 
 class AppState: ObservableObject {
     @Published var isThrowCompleted = false
-    
     func resetThrow() {
         isThrowCompleted = false
     }

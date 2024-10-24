@@ -9,11 +9,11 @@ struct WriteView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                Text("무슨 일이 당신을 힘들게하나요?")
+                Text("어떤 기억이 \n당신을 힘들게 하고 있나요?")
                     .font(.title2)
                     .padding([.leading, .trailing, .top])
                 
-                Text("자유롭게 표현해주세요.\n글을 다 작성하셨다면, 쪽지를 작성한 후 인형에 던져보세요.")
+                Text("자유롭게 당신의 마음을 적어주세요.\n어떤 생각이든, 어떤 감정이든 좋아요!")
                     .font(.custom("SF Pro Display", size: 14))
                     .foregroundColor(.gray)
                     .lineSpacing(6)
