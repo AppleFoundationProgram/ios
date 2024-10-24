@@ -1,7 +1,6 @@
 import CoreMotion
 import SwiftUI
 
-// Enum to represent the direction of the throw
 enum ThrowDirection: String {
     case left = "left"
     case right = "right"

@@ -1,7 +1,6 @@
 import SwiftUI
 import CoreMotion
 
-// throwView 때문에 제거
 //class AppState: ObservableObject {
 //    @Published var isThrowCompleted = false
 //    
