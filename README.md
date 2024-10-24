@@ -2,6 +2,7 @@
 
 CrumpDump는 감정을 기록하고 해소하는 데 도움을 주는 iOS 앱입니다. 사용자는 감정을 선택하고 종이 쪽지에 그 감정을 적은 후, 이를 가상으로 구기고 던지는 행위를 통해 감정을 표현하고 정화할 수 있습니다. 던진 쪽지는 귀여운 개구리 인형이 먹어 치우며 감정을 없애주는 상징적인 역할을 합니다. 이 앱은 심리적 표현을 통해 작은 트라우마와 부정적인 감정을 긍정적인 방식으로 다룰 수 있도록 돕습니다.
 
+![Monitor 2](https://github.com/user-attachments/assets/1cf2e8f8-72b0-4443-8d0f-6d805e0227e1)
 <img src="https://github.com/user-attachments/assets/8c3f3f8c-58d7-4d0b-99d3-5e36d4e34d5a" width="150" style="display:inline-block;">
 <img src="https://github.com/user-attachments/assets/615f9747-1199-41b0-ba0b-105c1f87ecfe" width="150" style="display:inline-block;">
 <img src="https://github.com/user-attachments/assets/bca1ec21-8970-4795-b4e4-59efa35e4459" width="150" style="display:inline-block;">
@@ -52,7 +53,7 @@ CrumpDump는 감정을 기록하고 해소하는 데 도움을 주는 iOS 앱입
 - 이 프로젝트는 **Apple Developer Academy @POSTECH**의 **Foundation Program 4기**에서 진행한 결과물입니다.
 
 ## 앱 스토어 링크
-- CrumpDump는 [앱 스토어]('링크 추가 예정')에서 다운로드할 수 있습니다.
+- CrumpDump는 [앱 스토어](https://testflight.apple.com/join/mh7q81Vs)에서 다운로드할 수 있습니다.(현재는 TestFlight)
 
 ## 라이선스
 - 이 프로젝트는 MIT 라이선스에 따라 배포됩니다. 자세한 사항은 `LICENSE` 파일을 참조해주세요.
