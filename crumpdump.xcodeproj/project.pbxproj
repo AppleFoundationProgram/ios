@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CDB034D32CC2203300E54CFD /* crumping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDB034D22CC2203300E54CFD /* crumping.mp3 */; };
 		F10682A22CC2B4D200F740DC /* throw4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F10682A12CC2B4D200F740DC /* throw4.mlmodel */; };
+		F1B0B6E92CC8759300D28374 /* frog.gif in Resources */ = {isa = PBXBuildFile; fileRef = F1B0B6E82CC8759300D28374 /* frog.gif */; };
 		F1EECF222CBCE9850099A1E1 /* crumpdumpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */; };
 		F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EECF252CBCE9860099A1E1 /* Assets.xcassets */; };
-		F1EECF292CBCE9860099A1E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EECF282CBCE9860099A1E1 /* Preview Assets.xcassets */; };
-		F1EECF332CBCE9860099A1E1 /* crumpdumpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF322CBCE9860099A1E1 /* crumpdumpTests.swift */; };
-		F1EECF3D2CBCE9860099A1E1 /* crumpdumpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF3C2CBCE9860099A1E1 /* crumpdumpUITests.swift */; };
-		F1EECF3F2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EECF3E2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,22 +31,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CDB034D22CC2203300E54CFD /* crumping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crumping.mp3; sourceTree = "<group>"; };
 		F10682A12CC2B4D200F740DC /* throw4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = throw4.mlmodel; sourceTree = "<group>"; };
+		F1B0B6E82CC8759300D28374 /* frog.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = frog.gif; sourceTree = "<group>"; };
 		F1EECF1E2CBCE9850099A1E1 /* crumpdump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crumpdump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpApp.swift; sourceTree = "<group>"; };
 		F1EECF252CBCE9860099A1E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F1EECF282CBCE9860099A1E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1EECF2E2CBCE9860099A1E1 /* crumpdumpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crumpdumpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EECF322CBCE9860099A1E1 /* crumpdumpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpTests.swift; sourceTree = "<group>"; };
 		F1EECF382CBCE9860099A1E1 /* crumpdumpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crumpdumpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EECF3C2CBCE9860099A1E1 /* crumpdumpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpUITests.swift; sourceTree = "<group>"; };
-		F1EECF3E2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crumpdumpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CD9133892CBE9F6300D24A07 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
 		CD91338A2CBE9F6800D24A07 /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
+		F1B0B6B62CC871A400D28374 /* Scene */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Scene; sourceTree = "<group>"; };
+		F1B0B6B72CC871BF00D28374 /* Sounds */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sounds; sourceTree = "<group>"; };
+		F1B0B6B92CC8727200D28374 /* Preview Content */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Preview Content"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				F1EECF202CBCE9850099A1E1 /* crumpdump */,
-				F1EECF312CBCE9860099A1E1 /* crumpdumpTests */,
-				F1EECF3B2CBCE9860099A1E1 /* crumpdumpUITests */,
 				F1EECF1F2CBCE9850099A1E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,40 +94,17 @@
 		F1EECF202CBCE9850099A1E1 /* crumpdump */ = {
 			isa = PBXGroup;
 			children = (
-				CDB034D22CC2203300E54CFD /* crumping.mp3 */,
+				F1B0B6B72CC871BF00D28374 /* Sounds */,
+				F1B0B6B62CC871A400D28374 /* Scene */,
 				CD91338A2CBE9F6800D24A07 /* Components */,
 				CD9133892CBE9F6300D24A07 /* Views */,
 				F1EECF212CBCE9850099A1E1 /* crumpdumpApp.swift */,
 				F10682A12CC2B4D200F740DC /* throw4.mlmodel */,
 				F1EECF252CBCE9860099A1E1 /* Assets.xcassets */,
-				F1EECF272CBCE9860099A1E1 /* Preview Content */,
+				F1B0B6B92CC8727200D28374 /* Preview Content */,
+				F1B0B6E82CC8759300D28374 /* frog.gif */,
 			);
 			path = crumpdump;
-			sourceTree = "<group>";
-		};
-		F1EECF272CBCE9860099A1E1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F1EECF282CBCE9860099A1E1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F1EECF312CBCE9860099A1E1 /* crumpdumpTests */ = {
-			isa = PBXGroup;
-			children = (
-				F1EECF322CBCE9860099A1E1 /* crumpdumpTests.swift */,
-			);
-			path = crumpdumpTests;
-			sourceTree = "<group>";
-		};
-		F1EECF3B2CBCE9860099A1E1 /* crumpdumpUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F1EECF3C2CBCE9860099A1E1 /* crumpdumpUITests.swift */,
-				F1EECF3E2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift */,
-			);
-			path = crumpdumpUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +125,8 @@
 			fileSystemSynchronizedGroups = (
 				CD9133892CBE9F6300D24A07 /* Views */,
 				CD91338A2CBE9F6800D24A07 /* Components */,
+				F1B0B6B62CC871A400D28374 /* Scene */,
+				F1B0B6B72CC871BF00D28374 /* Sounds */,
 			);
 			name = crumpdump;
 			productName = crumpdump;
@@ -245,9 +217,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EECF292CBCE9860099A1E1 /* Preview Assets.xcassets in Resources */,
 				F1EECF262CBCE9860099A1E1 /* Assets.xcassets in Resources */,
-				CDB034D32CC2203300E54CFD /* crumping.mp3 in Resources */,
+				F1B0B6E92CC8759300D28374 /* frog.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EECF332CBCE9860099A1E1 /* crumpdumpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,8 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EECF3F2CBCE9860099A1E1 /* crumpdumpUITestsLaunchTests.swift in Sources */,
-				F1EECF3D2CBCE9860099A1E1 /* crumpdumpUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,11 +418,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apt.crumpdump;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crumpdump;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -479,11 +451,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apt.crumpdump;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crumpdump;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -499,9 +475,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apt.crumpdumpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crumpdump.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/crumpdump";
 			};
 			name = Debug;
@@ -518,9 +498,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apt.crumpdumpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crumpdump.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/crumpdump";
 			};
 			name = Release;
@@ -535,9 +519,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apt.crumpdumpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = crumpdump;
 			};
 			name = Debug;
@@ -552,9 +540,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apt.crumpdumpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = crumpdump;
 			};
 			name = Release;
