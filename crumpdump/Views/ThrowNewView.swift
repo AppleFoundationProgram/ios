@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreMotion
+import SpriteKit
 
 class AppState: ObservableObject {
     @Published var isThrowCompleted = false
@@ -16,55 +17,65 @@ struct ThrowNewView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var throwSceneVisible = false
-    @State private var throwScene = ThrowScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    @State private var throwScene = ThrowScene(size: UIScreen.main.bounds.size)
     
     @State private var currentImageName: String = "open_mouth"
     
     @State private var throwInfoText: String = "감구리에게 당신의 부정적인 감정을 던져주세요!"
-    @State private var statusEmotionalText: String = "마음 속에 있는 부정적인 감정들을\n비워내보면 어떨까요?"
+    @State private var statusEmotionalText: String = "마음 속에 있는 부정적인 감정들을 비워내보면 어떨까요?"
     
     var body: some View {
         NavigationStack {
             VStack {
                 VStack {
-                    ZStack {
-                        VStack {
-                            Spacer()
-                            Image(currentImageName)
-                        }
-                        
-                        if throwSceneVisible {
-                            ThrowSceneView(scene: throwScene)
-                        }
-                        
-                        VStack {
-                            Text(throwInfoText)
-                                .font(.subheadline)
-                                .foregroundColor(Color.black)
-                                .padding()
-                            
-                            Text(statusEmotionalText)
-                                .font(.title3)
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(Color.black)
-                                .padding()
-                            
-                            Spacer()
-                            
-                            GifImage("frog")
-                                .opacity(throwSceneVisible ? 0 : 1)
-                        }
-                    }
+                    Text(throwInfoText)
+                        .font(.subheadline)
+                        .foregroundColor(Color.black)
                     
-                    HStack {
-                        CustomButton(title: "시작으로", backgroundColor: appState.isThrowCompleted ? .blue : Color.gray.opacity(0.3)) {
-                            navigateToHome = true
+                    Text(statusEmotionalText)
+                        .font(.title3)
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color.black)
+                        .padding([.top], 10)
+                }.padding()
+                
+                Spacer()
+                ZStack {
+                    VStack {
+                        GeometryReader { geometry in
+                            VStack {
+                                if !throwSceneVisible {
+                                    GifImage("frog")
+                                        .frame(width: geometry.size.width, height: 498)
+                                        .padding([.top])
+                                } else {
+                                    Image(currentImageName)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: geometry.size.width, height: 498)
+                                }
+                            }
                         }
-                        .disabled(!appState.isThrowCompleted)
+                        
+                    }.frame(alignment: .center)
+                    
+                    if throwSceneVisible {
+                        ThrowSceneView(scene: throwScene)
+                            .frame(height: 500)
                     }
                 }
+                .frame(height: 500)
+                
+                Spacer()
+                
+                HStack {
+                    CustomButton(title: "시작으로", backgroundColor: appState.isThrowCompleted ? .blue : Color.gray.opacity(0.3)) {
+                        navigateToHome = true
+                    }
+                    .disabled(!appState.isThrowCompleted)
+                }
             }
-            .padding()
             .background(Color.white)
             .navigationTitle("던지기")
             .navigationBarTitleDisplayMode(.inline)
@@ -105,14 +116,9 @@ struct ThrowNewView: View {
     }
     
     func throwNote(direction: ThrowDirection) {
-        // 진동
         HapticManager.shared.triggerRandomImpactHaptic(count: 5)
-        
-        // 효과음
         SoundManager.shared.playSound(soundName: "throw_start.mp3")
         SoundManager.shared.stopSoundAfter(seconds: 4)
-        
-        // ThrowScene을 보이게 설정
         throwSceneVisible = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -120,8 +126,7 @@ struct ThrowNewView: View {
                 currentImageName = "close_mouth"
                 SoundManager.shared.playSound(soundName: "chomp.mp3", onCompletion: {
                     appState.isThrowCompleted = true
-                    
-                    throwInfoText = "감구리 나쁜 감정을 먹어버렸어요!"
+                    throwInfoText = "감구리가 나쁜 감정을 먹어버렸어요!"
                     statusEmotionalText = "비워진 마음에 새로운 감정이나 좋은 감정을 채우시길 바래요!"
                 })
             }
