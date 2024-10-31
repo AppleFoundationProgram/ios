@@ -31,6 +31,7 @@ struct ThrowNewView: View {
                     Text(throwInfoText)
                         .font(.subheadline)
                         .foregroundColor(Color.black)
+                        .padding([.top], 30)
                     
                     Text(statusEmotionalText)
                         .font(.title3)
