@@ -33,7 +33,7 @@ class ThrowScene: SKScene {
         let path = UIBezierPath()
         path.move(to: circle.position)
         
-        let destinationPoint = CGPoint(x: frame.midX + 30, y: frame.midY - 50)
+        let destinationPoint = CGPoint(x: frame.midX + 30, y: frame.midY + 20)
         
         switch direction {
         case .right:

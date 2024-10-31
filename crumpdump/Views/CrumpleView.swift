@@ -11,7 +11,7 @@ struct CrumpleView: View {
     @State private var touchTimer: Timer?
     @State private var imageTimer: Timer?
     
-    private let period: TimeInterval = 3
+    private let period: TimeInterval = 5
     private let imageCount = 95
     
     @State private var typingComplete = false
@@ -26,7 +26,7 @@ struct CrumpleView: View {
             ZStack {
                 Image("\(currentImage)")
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
                 
                 VStack {
                     Text(explainMessage)
@@ -40,8 +40,7 @@ struct CrumpleView: View {
                     Spacer()
                     TypingText(fullText: bindEmotionList, isHidden: currentImage > 41) {
                         typingComplete = true
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                             explainMessage = "종이를 구길 준비가 됐습니다!\n종이를 꾸욱 눌러 구겨주세요!"
                         }
                     }
@@ -78,7 +77,7 @@ struct CrumpleView: View {
                 }
             }
         }
-        .onLongPressGesture(minimumDuration: 0.1, pressing: { pressing in
+        .onLongPressGesture(minimumDuration: 0.2, pressing: { pressing in
             if typingComplete {
                 if pressing {
                     if !isTouching && !crumpleDone {
@@ -109,14 +108,17 @@ struct CrumpleView: View {
     }
     
     private func startTouchTimer() {
-        startTime = Date()
-        totalTouchTime = 0
+        if startTime == nil {
+            startTime = Date()
+        }
         touchTimer?.invalidate()
         
         touchTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
             if let startTime = self.startTime {
-                self.totalTouchTime = Date().timeIntervalSince(startTime)
+                self.totalTouchTime += Date().timeIntervalSince(startTime)
+                self.startTime = Date()
                 crossCheckCrumpleDone()
+                
                 if !self.crumpleDone {
                     self.triggerHapticFeedback()
                 }
@@ -125,12 +127,14 @@ struct CrumpleView: View {
     }
     
     private func startImageTimer() {
-        let imageChangeInterval = period / Double(imageCount)
+        let imageChangeInterval = period * 2 / Double(imageCount)
         
         imageTimer?.invalidate()
         imageTimer = Timer.scheduledTimer(withTimeInterval: imageChangeInterval, repeats: true) { _ in
             if self.currentImage < self.imageCount && !self.crumpleDone {
-                self.currentImage += 1
+                self.currentImage += 2
+            } else {
+                self.currentImage = self.imageCount
             }
         }
     }
@@ -138,13 +142,12 @@ struct CrumpleView: View {
     private func crossCheckCrumpleDone() {
         if totalTouchTime >= period || currentImage >= imageCount {
             crumpleDone = true
+            currentImage = imageCount
             explainMessage = "종이를 모두 구겼습니다!!"
             stopCrumple()
-        }else{
-            
+        } else {
             explainMessage = "종이를 꾸욱 눌러야 구겨집니다!"
         }
-        
     }
     
     func stopCrumple() {
@@ -165,6 +168,7 @@ struct CrumpleView: View {
         currentImage = 1
         totalTouchTime = 0
         crumpleDone = false
+        isTouching = false
         explainMessage = "종이를 꾸욱 눌러야 구겨집니다!"
     }
     
