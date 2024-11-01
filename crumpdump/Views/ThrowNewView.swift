@@ -26,93 +26,96 @@ struct ThrowNewView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            GeometryReader { geometry in
                 VStack {
-                    Text(throwInfoText)
-                        .font(.subheadline)
-                        .foregroundColor(Color.black)
-                        .padding([.top], 30)
-                    
-                    Text(statusEmotionalText)
-                        .font(.title3)
-                        .lineLimit(nil)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color.black)
-                        .padding([.top], 10)
-                }.padding()
-                
-                Spacer()
-                ZStack {
                     VStack {
-                        GeometryReader { geometry in
-                            VStack {
-                                if !throwSceneVisible {
-                                    GifImage("frog")
-                                        .frame(width: geometry.size.width, height: 498)
-                                        .padding([.top])
-                                } else {
-                                    Image(currentImageName)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: geometry.size.width, height: 498)
+                        Text(throwInfoText)
+                            .font(.subheadline)
+                            .foregroundColor(Color.black)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding([.bottom])
+                        
+                        Text(statusEmotionalText)
+                            .font(.title3)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color.black)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: geometry.size.height * 0.25)
+                    
+                    ZStack {
+                        VStack {
+                            GeometryReader { geometry in
+                                VStack {
+                                    if !throwSceneVisible {
+                                        GifImage("frog")
+                                            .frame(width: geometry.size.width, height: 498)
+                                            .padding([.top])
+                                    } else {
+                                        Image(currentImageName)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: geometry.size.width, height: 498)
+                                    }
                                 }
                             }
-                        }
+                            
+                        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         
-                    }.frame(alignment: .center)
+                        if throwSceneVisible {
+                            ThrowSceneView(scene: throwScene)
+                                .frame(height: 500)
+                        }
+                    }
+                    .frame(height: geometry.size.height * 0.6)
                     
-                    if throwSceneVisible {
-                        ThrowSceneView(scene: throwScene)
-                            .frame(height: 500)
+                    HStack {
+                        CustomButton(title: "시작으로", backgroundColor: appState.isThrowCompleted ? .blue : Color.gray.opacity(0.3)) {
+                            navigateToHome = true
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .disabled(!appState.isThrowCompleted)
                     }
+                    .frame(height: geometry.size.height * 0.15)
                 }
-                .frame(height: 500)
-                
-                Spacer()
-                
-                HStack {
-                    CustomButton(title: "시작으로", backgroundColor: appState.isThrowCompleted ? .blue : Color.gray.opacity(0.3)) {
-                        navigateToHome = true
-                    }
-                    .disabled(!appState.isThrowCompleted)
-                }
+                .frame(width: geometry.size.width, height: geometry.size.height)
             }
-            .background(Color.white)
-            .navigationTitle("던지기")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .sheet(isPresented: $showInfo) {
-                SafetySheetView()
-            }
-            .onAppear {
-                showInfo = true
-                motionCatcher.startMotionUpdates()
-            }
-            .onDisappear {
+        }
+        .background(Color.white)
+        .navigationTitle("던지기")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .sheet(isPresented: $showInfo) {
+            SafetySheetView()
+        }
+        .onAppear {
+            showInfo = true
+            motionCatcher.startMotionUpdates()
+        }
+        .onDisappear {
+            motionCatcher.stopMotionUpdates()
+        }
+        .onChange(of: motionCatcher.isThrowDetected) { before, after in
+            if after && !before {
+                throwSceneVisible = true
                 motionCatcher.stopMotionUpdates()
+                throwNote(direction: motionCatcher.throwDirection)
             }
-            .onChange(of: motionCatcher.isThrowDetected) { before, after in
-                if after && !before {
-                    throwSceneVisible = true
-                    motionCatcher.stopMotionUpdates()
-                    throwNote(direction: motionCatcher.throwDirection)
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "chevron.left")
-                    }
+        }
+        .navigationDestination(isPresented: $navigateToHome) {
+            HomeView()
+                .onAppear {
+                    appState.resetThrow()
                 }
-            }
-            .navigationDestination(isPresented: $navigateToHome) {
-                HomeView()
-                    .onAppear {
-                        appState.resetThrow()
-                    }
-            }
         }
     }
     
@@ -143,3 +146,4 @@ struct ThrowNewView_Previews: PreviewProvider {
         }
     }
 }
+
