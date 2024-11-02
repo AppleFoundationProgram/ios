@@ -67,8 +67,7 @@ CrumpDump is an iOS app designed to help users express and release emotions. Use
 - This project was developed during the Apple Developer Academy @POSTECH as part of Foundation Program 4th Cohort.
 
 ## 앱 스토어 링크 | App Store Link
-- CrumpDump는 [[앱 스토어](https://testflight.apple.com/join/mh7q81Vs)](https://apps.apple.com/kr/app/crumpdump/id6737130375)에서 다운로드할 수 있습니다.(현재는 TestFlight)
-- CrumpDump is available on TestFlight.
+- CrumpDump는 [앱 스토어](https://apps.apple.com/kr/app/crumpdump/id6737130375)에서 다운로드할 수 있습니다.
 
 ## 라이선스 | License
 - 이 프로젝트는 MIT 라이선스에 따라 배포됩니다. 자세한 사항은 `LICENSE` 파일을 참조해주세요.
