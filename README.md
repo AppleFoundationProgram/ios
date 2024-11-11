@@ -4,15 +4,13 @@ CrumpDump는 감정을 기록하고 해소하는 데 도움을 주는 iOS 앱입
 
 CrumpDump is an iOS app designed to help users express and release emotions. Users can select emotions, write them down on a virtual note, crumple it up, and throw it to symbolically process and release their feelings. The thrown note is "eaten" by a cute frog doll, symbolically erasing the emotions. This app helps users deal with small traumas and negative emotions in a positive way through psychological expression.
 ![Monitor 2](https://github.com/user-attachments/assets/e090b517-a12c-4839-a67a-ba8d166a6bb5)
-<img src="https://github.com/user-attachments/assets/8c3f3f8c-58d7-4d0b-99d3-5e36d4e34d5a" width="150" style="display:inline-block;">
-<img src="https://github.com/user-attachments/assets/615f9747-1199-41b0-ba0b-105c1f87ecfe" width="150" style="display:inline-block;">
-<img src="https://github.com/user-attachments/assets/bca1ec21-8970-4795-b4e4-59efa35e4459" width="150" style="display:inline-block;">
-<img src="https://github.com/user-attachments/assets/632aa9ba-cdf7-4dce-9809-bd8143b5f097" width="150" style="display:inline-block;">
-<img src="https://github.com/user-attachments/assets/47647f2b-7c48-4923-9ba8-c983634687b2" width="150" style="display:inline-block;">
-<img src="https://github.com/user-attachments/assets/c389e896-4c4d-4573-a8ef-f1e32da1a7f1" width="150" style="display:inline-block;">
-<img src="https://github.com/user-attachments/assets/ff2bd8d4-7985-4a66-9a14-da8215075a05" width="150" style="display:inline-block;">
-<img src="https://github.com/user-attachments/assets/1fff4e7f-d5f7-4997-8baa-83cf71d46e6c" width="150" style="display:inline-block;">
-<img src="https://github.com/user-attachments/assets/875f4495-e17f-4c22-8d6a-b0654a5ef1b6" width="150" style="display:inline-block;">
+
+![crumpdump1](https://github.com/user-attachments/assets/bee86fab-9a92-46da-a8f6-49dc112bf68c)
+![crumpdump2](https://github.com/user-attachments/assets/9c309923-8287-4c96-a25d-8e52a6ccb377)
+![crumpdump3](https://github.com/user-attachments/assets/81c411dc-bf3a-4964-93c8-d5e3d4d62f36)
+![crumpdump4](https://github.com/user-attachments/assets/a0962735-36df-42c9-9eee-f0e6ef929ebc)
+![crumpdump5](https://github.com/user-attachments/assets/03d29035-4916-4261-b421-e075713f8f24)
+
 
 ## 주요 기능 | Key Features
 
