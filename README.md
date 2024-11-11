@@ -3,14 +3,14 @@
 CrumpDump는 감정을 기록하고 해소하는 데 도움을 주는 iOS 앱입니다. 사용자는 감정을 선택하고 종이 쪽지에 그 감정을 적은 후, 이를 가상으로 구기고 던지는 행위를 통해 감정을 표현하고 정화할 수 있습니다. 던진 쪽지는 귀여운 개구리 인형이 먹어 치우며 감정을 없애주는 상징적인 역할을 합니다. 이 앱은 심리적 표현을 통해 작은 트라우마와 부정적인 감정을 긍정적인 방식으로 다룰 수 있도록 돕습니다.
 
 CrumpDump is an iOS app designed to help users express and release emotions. Users can select emotions, write them down on a virtual note, crumple it up, and throw it to symbolically process and release their feelings. The thrown note is "eaten" by a cute frog doll, symbolically erasing the emotions. This app helps users deal with small traumas and negative emotions in a positive way through psychological expression.
-![Monitor 2](https://github.com/user-attachments/assets/e090b517-a12c-4839-a67a-ba8d166a6bb5)
-
-![crumpdump1](https://github.com/user-attachments/assets/bee86fab-9a92-46da-a8f6-49dc112bf68c)
-![crumpdump2](https://github.com/user-attachments/assets/9c309923-8287-4c96-a25d-8e52a6ccb377)
-![crumpdump3](https://github.com/user-attachments/assets/81c411dc-bf3a-4964-93c8-d5e3d4d62f36)
-![crumpdump4](https://github.com/user-attachments/assets/a0962735-36df-42c9-9eee-f0e6ef929ebc)
-![crumpdump5](https://github.com/user-attachments/assets/03d29035-4916-4261-b421-e075713f8f24)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e090b517-a12c-4839-a67a-ba8d166a6bb5" width="15%">
+  <img src="https://github.com/user-attachments/assets/bee86fab-9a92-46da-a8f6-49dc112bf68c" width="15%">
+  <img src="https://github.com/user-attachments/assets/9c309923-8287-4c96-a25d-8e52a6ccb377" width="15%">
+  <img src="https://github.com/user-attachments/assets/81c411dc-bf3a-4964-93c8-d5e3d4d62f36" width="15%">
+  <img src="https://github.com/user-attachments/assets/a0962735-36df-42c9-9eee-f0e6ef929ebc" width="15%">
+  <img src="https://github.com/user-attachments/assets/03d29035-4916-4261-b421-e075713f8f24" width="15%">
+</p>
 
 ## 주요 기능 | Key Features
 
@@ -46,14 +46,11 @@ CrumpDump is an iOS app designed to help users express and release emotions. Use
 - **AVFoundation**: Provides sound effects when crumpling and throwing the note.
 - **UIKit Dynamics & CAAnimation**: Implements realistic animations for throwing the note.
 
-## 설치 및 실행 방법 | Installation and Running Instructions
-1. 이 저장소를 클론합니다. (Clone this repository)
-   ```bash
-   git clone https://github.com/applefoundationprogram/ios.git
-   ```
-2. 프로젝트 폴더로 이동합니다. (Move to the project folder.)
-3. Xcode에서 `crumpdump.xcodeproj` 파일을 엽니다. (Open the 'crumpdump.xcodeproj' file in Xcode.)
-4. iOS 시뮬레이터 또는 물리적 장치에서 실행합니다. (Run the app on an iOS simulator or physical device.)
+아이폰을 잡고 쪽지를 던지는 동작을 인식하기 위해 CoreMotion을 사용하여 가속도 값을 인식하고,
+이를 CreateML로 학습시켜 알고리즘을 구현하려 했습니다. 하지만, 학습 데이터가 부족하여 오류가 많이 발생했습니다.
+이에 직접 엑셀 파일을 읽어 데이터를 분석하고, 이를 기반으로 알고리즘을 작성하여 100%의 인식 성공률을 달성했습니다.
+
+We used CoreMotion to recognize the motion of holding an iPhone and throwing a note. Initially, we aimed to implement the algorithm using CreateML, but encountered frequent errors due to insufficient training data. To overcome this, we manually analyzed the data in Excel, then developed an algorithm based on these insights, ultimately achieving a 100% recognition success rate.
 
 ## 주의사항 | Cautions
 - **안전한 사용**: 앱에서 제공하는 던지기 동작은 가상입니다. 실제로 핸드폰을 던지지 않도록 주의하세요. 모션 인식 기능은 주변에 물건이 없는 넉넉한 공간에서 사용하시기 바랍니다.
